@@ -1,6 +1,7 @@
 package interfatec.somadedigitos;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -24,8 +25,9 @@ public class SomaDeDigitos {
             listaDigitos.add(num2%10);
             num2/=10;
         }
+        Collections.reverse(listaDigitos);
         for(int i = 0;i< listaDigitos.size();i++){
-            int v = (int) (listaDigitos.get(i)*Math.pow(10,-(i-listaDigitos.size()+1)));
+            int v = (int) (listaDigitos.get(i)*Math.pow(10,i));
             listaDigitos.set(i,v);
             resultado+=listaDigitos.get(i);
         }
